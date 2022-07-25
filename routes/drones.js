@@ -20,11 +20,30 @@ router.get('/drones', async (req, res, next) => {
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
+  res.render("drones/create-form.hbs") // la vista 
 });
 
-router.post('/drones/create', (req, res, next) => {
+router.post('/drones/create', async (req, res, next) => {
   // Iteration #3: Add a new drone
   // ... your code here
+
+  // 1. donde se recibe la data
+  const {name, propellers, maxSpeed} = req.body // esta va fuera del try
+
+  // 2. creamos el drone en la BD
+   try {
+     await Drone.create(
+      {
+       name, 
+       propellers, 
+       maxSpeed 
+      })
+      console.log("drone creado")
+      res.redirect("/drones")
+   } catch (err) {
+       res.render("drones/create-form.hbs")
+   }
+  
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
