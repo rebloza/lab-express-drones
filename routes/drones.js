@@ -82,9 +82,20 @@ router.post("/drones/:droneId/edit", async (req, res, next) => {
   }
 });
 
-router.post("/drones/:id/delete", (req, res, next) => {
+router.post("/drones/:droneId/delete", async (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
+  try {
+    // 1. obtener el id
+    const {droneId} = req.params
+
+    //2. usar metodo para borrar
+   await Drone.findByIdAndDelete(droneId)
+   res.redirect("/drones")
+    
+  } catch (error) {
+    next(err)
+  }
 });
 
 module.exports = router;
