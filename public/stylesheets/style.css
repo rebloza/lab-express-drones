@@ -1,20 +1,21 @@
 body {
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
+  background-color: moccasin;
 }
 a {
-  color: #00b7ff
+  color:mediumblue;
 }
 
 #menu {
- padding: 10px;
-}  
+  padding: 10px;
+  background-color: white;
+}
 
 #menu a {
-  color:black; 
+  color: black;
   text-decoration: none;
   padding: 10px;
-
 }
 
 /* HOME VIEW */
@@ -24,55 +25,115 @@ a {
   background-size: cover;
   filter: brightness(80%);
   height: 100vh;
-  
+
   display: flex;
   justify-content: flex-end;
-
 }
 
 #home-contenido {
   filter: brightness(100%);
-  margin-top:300px;
+  margin-top: 300px;
   margin-right: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 #home-contenido h1 {
-  font-size:120px ;
+  font-size: 120px;
   color: white;
-
 }
 
 #home-contenido a {
   font-size: 40px;
-  background-color: lightgrey ;
+  background-color: lightgrey;
   padding: 30px;
   border-radius: 30px;
   text-decoration: none;
-
 }
 
 /*  VER DRONES */
 
 #drones-view {
- max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
- #drones-cartas-contenedor {
+#drones-view h1 {
+  font-size: 48px;
+}
+
+#create-drone-button {
+  font-size: 28px;
+  height: 75px;
+  margin-top: 50px;
+  border-radius: 30px;
+  background-color: lightblue;
+}
+
+#drones-cartas-contenedor {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 500px;
-} 
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  margin-top: 30px;
+}
 
 #drone-carta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  background-color: lightblue;
+  padding: 20px;
+  border-radius: 10px;
 }
 
+#drone-carta-botones {
+  display: flex;
+  margin: 14px;
+}
 
+#drone-carta-botones a {
+  margin-right: 14px;
+  text-decoration: none;
+}
 
+/* CREAR DRON */
 
+#create-drone-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+#create-drone-view h1 {
+  font-size: 32px;
+}
+
+#drone-formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.drone-input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#formulario-button {
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+/* ACTUALIZAR DRON */
+
+#update-drone-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#update-drone-view h1 {
+  font-size: 32px;
+}

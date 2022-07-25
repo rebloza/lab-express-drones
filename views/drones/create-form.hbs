@@ -1,18 +1,24 @@
-<h2>Create a new drone</h2>
+<div id="create-drone-view">
 
-<form action="" method="POST">
+  <h1>Create a new drone</h1>
 
-    <label for="name">Name</label>
-    <input type="text" name="name"required="true" >
-    <br>
-    <label for="propellers">Propellers</label>
-    <input type="text" name="propellers" required="true">
-    <br>
-    <label for="maxSpeed">MaxSpeed:</label>
-    <input type="text" name="maxSpeed" required="true">
-    <br>
+  <form id="drone-formulario" action="" method="POST">
+    <div class="drone-input">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required="true" />
 
-    <button>Agregar Drone</button>
+    </div>
+    <div class="drone-input">
+      <label for="propellers">Propellers:</label>
+      <input type="text" name="propellers" required="true" />
+    </div>
+    <div class="drone-input">
+      <label for="maxSpeed">MaxSpeed:</label>
+      <input type="text" name="maxSpeed" required="true" />
+    </div>
 
-</form>
+    <button id="formulario-button">Agregar Drone</button>
 
+  </form>
+
+</div>

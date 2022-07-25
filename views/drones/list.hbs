@@ -1,31 +1,31 @@
 <div id="drones-view">
-  <h2>Available drones</h2>
+  <h1>Available drones</h1>
+
   <div id="drones-cartas-contenedor">
-    <ul>
-      {{#each droneList}}
-        <li id="drone-carta">
-          <div class="drone-carta-info">
-            <p>Name: {{this.name}}</p>
-            <p>Propellers: {{this.propellers}}</p>
-            <p>Max Speed: {{this.maxSpeed}}</p>
 
-          </div>
-          <div id="drone-carta-botones">
-            <a href="/drones/{{this._id}}/edit">Editar Drone</a>
-            <form action="/drones/{{this._id}}/delete" method="POST">
-              <button>Borrar Drone</button>
-            </form>
+    {{#each droneList}}
 
-          </div>
+      <div id="drone-carta">
+        <div class="drone-carta-info">
+          <p>Name: {{this.name}}</p>
+          <p>Propellers: {{this.propellers}}</p>
+          <p>Max Speed: {{this.maxSpeed}}</p>
+        </div>
 
-        </li>
-      {{/each}}
-    </ul>
+        <div id="drone-carta-botones">
 
+          <a href="/drones/{{this._id}}/edit">Editar Drone</a>
+          <form action="/drones/{{this._id}}/delete" method="POST">
+            <button>Borrar Drone</button>
+          </form>
+        </div>
+      </div>
+
+    {{/each}}
   </div>
 
   <a href="/drones/create">
-    <button>Crear Drone</button>
+    <button id="create-drone-button">Crear Drone</button>
   </a>
 
 </div>
