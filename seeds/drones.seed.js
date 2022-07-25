@@ -14,8 +14,8 @@ const Drone = require("../models/Drone.model.js")
 
 // const addDrones = async() => {
 //     try {
-//         await Drone.insertMany(droneArr)
-//         console.log("Drones agregados")
+//         const dronesList = await Drone.insertMany(droneArr)
+//         console.log("Drones agregados", dronesList.length)
 //         mongoose.connection.close()
 //     }catch (err) {
 //         next(err)
@@ -25,8 +25,9 @@ const Drone = require("../models/Drone.model.js")
 
 const addDrones = async() => {
     try {
-        await Drone.create(droneArr)
-        console.log("drones agragados", droneArr) 
+      const dronesList =   await Drone.create(droneArr)
+        console.log("drones agragados", dronesList.length)
+        mongoose.connection.close()
     } catch (err) {
         next(err)
     }
